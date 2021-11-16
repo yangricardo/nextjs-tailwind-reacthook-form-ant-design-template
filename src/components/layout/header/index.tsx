@@ -5,10 +5,12 @@ export const Header = () => {
   return (
     <header
       className={
-        'w-full h-20 flex flex-col flex-1 items-center justify-center content-center shadow-sm'
+        'w-full flex flex-col flex-1 items-center justify-center content-center shadow-sm'
       }
     >
-      <nav className={'w-full h-20 max-w-7xl flex content-center items-center'}>
+      <nav
+        className={'w-full h-16   max-w-7xl flex content-center items-center'}
+      >
         <nav className="w-full flex items-start">
           <HeaderLink href="/" content={<HomeIcon className={'h-8 w-8'} />} />
         </nav>
