@@ -12,3 +12,4 @@
 - add [react hook form](https://react-hook-form.com) for forms implementation
 - nextjs link usage samples
 - header and footer layouts
+- header link component

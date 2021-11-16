@@ -1,4 +1,5 @@
-import Link from 'next/link';
+import { HeaderLink } from './header-link';
+
 export const Header = () => {
   return (
     <header
@@ -7,11 +8,7 @@ export const Header = () => {
       }
     >
       <nav className={'w-full max-w-7xl'}>
-        <Link href="/">
-          <span className="p-4 h-full hover:bg-gray-600 hover:text-white transition duration-200 cursor-pointer">
-            Home
-          </span>
-        </Link>
+        <HeaderLink href="/" content={'Home'} />
       </nav>
     </header>
   );
