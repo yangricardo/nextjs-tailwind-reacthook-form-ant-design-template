@@ -1,10 +1,9 @@
 import type { NextPage } from 'next';
-import Link from 'next/link';
 import Head from 'next/head';
 
 const Home: NextPage = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div className="flex flex-col items-center justify-center min-h-screen">
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
@@ -65,9 +64,6 @@ const Home: NextPage = () => {
               Instantly deploy your Next.js site to a public URL with Vercel.
             </p>
           </a>
-        </div>
-        <div className="w-full flex flex-col space-y-4 justify-center items-center">
-          <Link href="/">Home</Link>
         </div>
       </main>
 

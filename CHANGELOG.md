@@ -13,3 +13,4 @@
 - nextjs link usage samples
 - header and footer layouts
 - header link component
+- header navigation links updates
