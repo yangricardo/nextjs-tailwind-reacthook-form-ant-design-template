@@ -4,3 +4,4 @@
 
 - `yarn create next-app --typescript`: bootstrap nextjs project
 - `yarn add -D prettier`: add prettier
+- add editorconfig
