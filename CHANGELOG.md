@@ -11,3 +11,4 @@
 - [add ant design for built UI components](https://ant.design/components/overview/)
 - add [react hook form](https://react-hook-form.com) for forms implementation
 - nextjs link usage samples
+- header and footer layouts
