@@ -1,4 +1,5 @@
 import { NextPage } from 'next';
+import Link from 'next/link';
 import { Radio, Input } from 'antd';
 import { useState } from 'react';
 const AntDesignPage: NextPage = () => {
@@ -19,6 +20,9 @@ const AntDesignPage: NextPage = () => {
         <Radio.Button value="Beijing">Beijing</Radio.Button>
         <Radio.Button value="Chengdu">Chengdu</Radio.Button>
       </Radio.Group>
+      <div className="w-full flex flex-col space-y-4 justify-center items-center">
+        <Link href="/">Home</Link>
+      </div>
     </div>
   );
 };

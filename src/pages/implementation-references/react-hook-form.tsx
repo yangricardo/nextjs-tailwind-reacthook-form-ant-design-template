@@ -1,8 +1,8 @@
 import { NextPage } from 'next';
+import Link from 'next/link';
 import { useEffect } from 'react';
 import { SubmitHandler, useForm, FormProvider } from 'react-hook-form';
-import { TextInput } from '../components/forms/text-input';
-
+import { TextInput } from '@/components/forms/text-input';
 interface ISampleForm {
   value: string;
 }
@@ -21,6 +21,9 @@ const ReactHookFormPage: NextPage = () => {
         <TextInput name="value" placeholder="" />
         <h1>{formChanges.value}</h1>
       </form>
+      <div className="w-full flex flex-col space-y-4 justify-center items-center">
+        <Link href="/">Home</Link>
+      </div>
     </FormProvider>
   );
 };

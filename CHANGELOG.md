@@ -10,3 +10,4 @@
 - test tailwind configuration on index.ts referencing [with tailwind sample](https://github.com/vercel/next.js/blob/canary/examples/with-tailwindcss/pages/index.js)
 - [add ant design for built UI components](https://ant.design/components/overview/)
 - add [react hook form](https://react-hook-form.com) for forms implementation
+- nextjs link usage samples
