@@ -14,3 +14,4 @@
 - header and footer layouts
 - header link component
 - header navigation links updates
+- add react dropzone
