@@ -15,3 +15,4 @@
 - header link component
 - header navigation links updates
 - add react dropzone
+- integration of react dropzone with react hook form
