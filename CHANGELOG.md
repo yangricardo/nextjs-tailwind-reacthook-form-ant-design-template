@@ -6,5 +6,6 @@
 - `yarn add -D prettier`: add prettier
 - add editorconfig
 - fix default project structure by arranging `pages` and `styles` folders inside `src`
-- [tailwindcss configuration](https://tailwindcss.com/docs/guides/nextjs)
+- [tailwindcss configuration css class utilities](https://tailwindcss.com/docs/guides/nextjs)
 - test tailwind configuration on index.ts referencing [with tailwind sample](https://github.com/vercel/next.js/blob/canary/examples/with-tailwindcss/pages/index.js)
+- [add ant design for built UI components](https://ant.design/components/overview/)
