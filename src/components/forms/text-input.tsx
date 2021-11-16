@@ -1,5 +1,4 @@
 import { Input } from 'antd';
-import { useCallback } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 
 export interface ITextInput {
