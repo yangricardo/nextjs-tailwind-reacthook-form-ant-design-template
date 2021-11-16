@@ -7,3 +7,4 @@
 - add editorconfig
 - fix default project structure by arranging `pages` and `styles` folders inside `src`
 - [tailwindcss configuration](https://tailwindcss.com/docs/guides/nextjs)
+- test tailwind configuration on index.ts referencing [with tailwind sample](https://github.com/vercel/next.js/blob/canary/examples/with-tailwindcss/pages/index.js)
