@@ -6,6 +6,7 @@
   - Enable to implement Repositories / Services classes used on backend
 - Implementation of basic CRUD Value Repository and api endpoints
 - add base context api code for context hook implementations
+- add axios for http requests
 
 ## 2021.11.16
 
