@@ -13,6 +13,7 @@
 - implement Index values page consuming values from context hook
 - Crud functionalities pages based on crud api for `ValueDTO`
 - enforces input attributes from form interface based on React Hook Form integration
+- add label to inputs
 
 ## 2021.11.16
 

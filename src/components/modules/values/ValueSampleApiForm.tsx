@@ -44,6 +44,7 @@ export const ValueSampleApiForm = ({
   return (
     <FormProvider {...RHForm}>
       <Form
+        layout="vertical"
         onSubmitCapture={RHForm.handleSubmit(onSubmit)}
         className="w-full flex flex-col space-y-4 justify-center items-center"
       >
