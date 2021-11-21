@@ -64,7 +64,7 @@ export const FileDropzone = <TFieldValues extends FieldValues>({
             ${loading && 'cursor-wait'}
             ${
               (disabled && 'cursor-not-allowed') ||
-              'hover:border-blue-300 hover:text-blue-500'
+              'hover:border-blue-300 hover:text-blue-500 bg-white'
             }
           `,
         })}
