@@ -16,6 +16,7 @@
 - add label to inputs
 - password input
 - improve File Dropzone implementation
+- Select input implementations
 
 ## 2021.11.16
 
