@@ -14,6 +14,7 @@
 - Crud functionalities pages based on crud api for `ValueDTO`
 - enforces input attributes from form interface based on React Hook Form integration
 - add label to inputs
+- password input
 
 ## 2021.11.16
 
