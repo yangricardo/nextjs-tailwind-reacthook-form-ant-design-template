@@ -7,6 +7,7 @@ import { FileDropzone } from '@/components/forms/file-dropzone';
 import { FileWithPath } from 'file-selector';
 import { PasswordInput } from '@/components/forms/password-input';
 import { SelectInput } from '@/components/forms/select-input';
+import { RadioInput } from '@/components/forms/radio-input';
 interface ISampleForm {
   text: string;
   password: string;
@@ -14,6 +15,7 @@ interface ISampleForm {
   simpleSelect: string;
   multipleSelect: string[];
   tagsSelect: string[];
+  radioInput: string;
 }
 
 const ReactHookFormPage: NextPage = () => {
@@ -110,6 +112,36 @@ const ReactHookFormPage: NextPage = () => {
           label="Tags Select"
           allowClear
           mode="tags"
+          options={[
+            {
+              label: 'Option 1',
+              value: 'option 1',
+            },
+            {
+              label: 'Option 2',
+              value: 'option 2',
+            },
+          ]}
+        />
+        <RadioInput<ISampleForm>
+          label="Radio Input"
+          name="radioInput"
+          buttonStyle="solid"
+          options={[
+            {
+              label: 'Option 1',
+              value: 'option 1',
+            },
+            {
+              label: 'Option 2',
+              value: 'option 2',
+            },
+          ]}
+        />
+        <RadioInput<ISampleForm>
+          label="Radio Input"
+          name="radioInput"
+          buttonStyle="outline"
           options={[
             {
               label: 'Option 1',

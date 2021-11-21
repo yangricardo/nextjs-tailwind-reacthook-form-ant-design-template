@@ -18,6 +18,7 @@
 - improve File Dropzone implementation
 - Select input implementations
 - suffix and prefix text input enable
+- radio input implementation
 
 ## 2021.11.16
 
