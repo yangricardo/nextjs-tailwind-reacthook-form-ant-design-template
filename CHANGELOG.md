@@ -11,6 +11,7 @@
 - implement value resource hook from sample api with crud client calls
   - included provider of this on SampleApi provider
 - implement Index values page consuming values from context hook
+- Crud functionalities pages based on crud api for `ValueDTO`
 
 ## 2021.11.16
 

@@ -8,7 +8,7 @@ export class ValueRepository {
   constructor() {
     this.values = [
       {
-        id: Date.now(),
+        id: 1,
         value: 'valor 1',
       },
     ];

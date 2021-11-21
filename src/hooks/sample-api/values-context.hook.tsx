@@ -8,10 +8,12 @@ import { useSampleApiClient } from './sample-api-client-hook';
 
 interface ValuesResourceSampleApiClientContextDTO {
   values: ValueDTO[];
+  currentValue?: ValueDTO;
   getValues: () => Promise<ValueDTO[] | undefined>;
   createValue: (data: CreateValueDTO) => Promise<ValueDTO>;
   updateValue: (id: number, data: UpdateValueDTO) => Promise<ValueDTO>;
   deleteValue: (id: number) => Promise<void>;
+  getValueById: (id: number) => Promise<ValueDTO>;
 }
 
 const ValuesResourceSampleApiClientContext =
@@ -21,6 +23,7 @@ const ValuesResourceSampleApiClientContext =
 
 const ValuesResourceSampleApiClientProvider: React.FC = ({ children }) => {
   const [values, setValues] = useState<ValueDTO[]>([]);
+  const [currentValue, setCurrentValue] = useState<ValueDTO>();
 
   const { sampleApiHttpClientRef } = useSampleApiClient();
 
@@ -36,6 +39,22 @@ const ValuesResourceSampleApiClientProvider: React.FC = ({ children }) => {
       throw error;
     }
   }, [sampleApiHttpClientRef]);
+
+  const getValueById = useCallback(
+    async (id: number) => {
+      try {
+        const response = await sampleApiHttpClientRef.current.get<ValueDTO>(
+          `/values/${id}`,
+        );
+        setCurrentValue(response.data);
+        return response.data;
+      } catch (error) {
+        console.error(error);
+        throw error;
+      }
+    },
+    [sampleApiHttpClientRef],
+  );
 
   const createValue = useCallback(
     async (data: CreateValueDTO) => {
@@ -89,6 +108,8 @@ const ValuesResourceSampleApiClientProvider: React.FC = ({ children }) => {
         createValue,
         updateValue,
         deleteValue,
+        getValueById,
+        currentValue,
       }}
     >
       {children}
