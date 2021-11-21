@@ -47,7 +47,11 @@ export const ValueSampleApiForm = ({
         onSubmitCapture={RHForm.handleSubmit(onSubmit)}
         className="w-full flex flex-col space-y-4 justify-center items-center"
       >
-        <TextInput name="value" placeholder="Valor" />
+        <TextInput<CreateValueDTO>
+          name="value"
+          placeholder="Valor"
+          label="Valor"
+        />
         <Button type="primary" htmlType="submit">
           Enviar
         </Button>

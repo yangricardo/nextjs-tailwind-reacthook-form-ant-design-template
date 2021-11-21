@@ -12,6 +12,7 @@
   - included provider of this on SampleApi provider
 - implement Index values page consuming values from context hook
 - Crud functionalities pages based on crud api for `ValueDTO`
+- enforces input attributes from form interface based on React Hook Form integration
 
 ## 2021.11.16
 

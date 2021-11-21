@@ -1,12 +1,11 @@
 import { Input } from 'antd';
-import { Controller, useFormContext } from 'react-hook-form';
+import { Controller, FieldValues, useFormContext } from 'react-hook-form';
+import { IGenericInputProps } from '.';
 
-export interface ITextInput {
-  name: string;
-  placeholder: string;
-}
-
-export const TextInput = ({ name, placeholder }: ITextInput) => {
+export const TextInput = <TFieldValues extends FieldValues>({
+  name,
+  placeholder,
+}: IGenericInputProps<TFieldValues>) => {
   const { control } = useFormContext();
   return (
     <Controller

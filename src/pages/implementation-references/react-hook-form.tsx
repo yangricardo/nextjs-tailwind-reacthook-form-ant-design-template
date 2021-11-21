@@ -12,7 +12,7 @@ interface ISampleForm {
 }
 
 const ReactHookFormPage: NextPage = () => {
-  const RHForm = useForm();
+  const RHForm = useForm<ISampleForm>();
 
   const onSubmit: SubmitHandler<ISampleForm> = data =>
     console.log('Submit', data);
@@ -26,9 +26,8 @@ const ReactHookFormPage: NextPage = () => {
         onSubmit={RHForm.handleSubmit(onSubmit)}
         className="w-full flex flex-col space-y-4 justify-center items-center"
       >
-        <TextInput name="usuario" placeholder="usuario" />
-        <TextInput name="projeto" placeholder="projeto" />
-        <h1>{formChanges.value}</h1>
+        <TextInput<ISampleForm> name="usuario" placeholder="usuario" label="" />
+        <TextInput<ISampleForm> name="projeto" placeholder="projeto" label="" />
         <FileDropzone name="file" />
         <Button type="primary" htmlType="submit">
           Enviar
