@@ -7,6 +7,7 @@
 - Implementation of basic CRUD Value Repository and api endpoints
 - add base context api code for context hook implementations
 - add axios for http requests
+- add base client api based on axios
 
 ## 2021.11.16
 
