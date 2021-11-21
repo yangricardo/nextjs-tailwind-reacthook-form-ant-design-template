@@ -8,6 +8,8 @@
 - add base context api code for context hook implementations
 - add axios for http requests
 - add base client api based on axios
+- implement value resource hook from sample api with crud client calls
+  - included provider of this on SampleApi provider
 
 ## 2021.11.16
 
