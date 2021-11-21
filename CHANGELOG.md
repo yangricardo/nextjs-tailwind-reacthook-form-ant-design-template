@@ -20,6 +20,9 @@
 - suffix and prefix text input enable
 - radio input implementation
 - check box and check group components
+- switch components
+
+-
 
 ## 2021.11.16
 

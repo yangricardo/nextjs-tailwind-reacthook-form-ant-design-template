@@ -2,14 +2,6 @@ import { Checkbox } from 'antd';
 import { Controller, FieldValues, useFormContext } from 'react-hook-form';
 import { IGenericInputProps } from '.';
 import { Label } from './label';
-
-export interface ICheckBoxOption {
-  label: string;
-  value: any;
-  disabled?: boolean;
-  inderterminate?: boolean;
-}
-
 export interface ICheckBoxInputProps<TFieldValues extends FieldValues>
   extends IGenericInputProps<TFieldValues> {
   disabled?: boolean;

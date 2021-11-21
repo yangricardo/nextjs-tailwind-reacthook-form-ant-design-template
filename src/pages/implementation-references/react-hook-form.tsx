@@ -10,6 +10,7 @@ import { SelectInput } from '@/components/forms/select-input';
 import { RadioInput } from '@/components/forms/radio-input';
 import { CheckGroupInput } from '@/components/forms/check-group-input';
 import { CheckInput } from '@/components/forms/checkbox-input copy';
+import { SwitchInput } from '@/components/forms/switch-input';
 interface ISampleForm {
   text: string;
   password: string;
@@ -20,6 +21,7 @@ interface ISampleForm {
   radioInput: string;
   checkGroupInput: string[];
   checkInput: boolean;
+  switchInput: boolean;
 }
 
 const ReactHookFormPage: NextPage = () => {
@@ -172,6 +174,20 @@ const ReactHookFormPage: NextPage = () => {
           ]}
         />
         <CheckInput<ISampleForm> name="checkInput" label="Checkbox Input" />
+        <SwitchInput<ISampleForm>
+          name="switchInput"
+          label="Switch Input"
+          checkedChildren={'Activated'}
+          unCheckedChildren={'Deactivated'}
+        />
+        <SwitchInput<ISampleForm>
+          name="switchInput"
+          label="Switch Input"
+          checkedChildren={'Activated'}
+          unCheckedChildren={'Deactivated'}
+          loading
+          // disabled
+        />
         <Button type="primary" htmlType="submit">
           Enviar
         </Button>
