@@ -2,7 +2,7 @@ import { NextPage } from 'next';
 import { useEffect } from 'react';
 import { SubmitHandler, useForm, FormProvider } from 'react-hook-form';
 import { TextInput } from '@/components/forms/text-input';
-import { Button, Form } from 'antd';
+import { Button, Form, Tooltip } from 'antd';
 import { FileDropzone } from '@/components/forms/file-dropzone';
 import { FileWithPath } from 'file-selector';
 import { PasswordInput } from '@/components/forms/password-input';
@@ -33,6 +33,12 @@ const ReactHookFormPage: NextPage = () => {
         className="w-full flex flex-col space-y-2 justify-center items-center"
       >
         <TextInput<ISampleForm> name="text" placeholder="Texto" label="Texto" />
+        <TextInput<ISampleForm>
+          name="text"
+          placeholder="Texto"
+          label="Texto"
+          suffix={<Tooltip title="Extra information">?</Tooltip>}
+        />
         <PasswordInput<ISampleForm>
           name="password"
           placeholder="Senha"

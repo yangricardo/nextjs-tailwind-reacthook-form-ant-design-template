@@ -17,6 +17,7 @@
 - password input
 - improve File Dropzone implementation
 - Select input implementations
+- suffix and prefix text input enable
 
 ## 2021.11.16
 

@@ -1,13 +1,28 @@
 import { Input } from 'antd';
+import { ReactNode } from 'react';
 import { Controller, FieldValues, useFormContext } from 'react-hook-form';
 import { IGenericInputProps } from '.';
 import { Label } from './label';
+export interface ITextInputProps<
+  TFieldValues extends FieldValues,
+  ValueType = any,
+> extends IGenericInputProps<TFieldValues> {
+  disabled?: boolean;
+  loading?: boolean;
+  allowClear?: boolean;
+  defaultValue?: ValueType;
+  filterOption?: boolean;
+  prefix?: ReactNode;
+  suffix?: ReactNode;
+}
 
 export const TextInput = <TFieldValues extends FieldValues>({
   name,
   placeholder,
   label,
-}: IGenericInputProps<TFieldValues>) => {
+  prefix,
+  suffix,
+}: ITextInputProps<TFieldValues>) => {
   const { control } = useFormContext();
   return (
     <Controller
@@ -20,6 +35,8 @@ export const TextInput = <TFieldValues extends FieldValues>({
             value={value}
             onBlur={onBlur}
             placeholder={placeholder}
+            prefix={prefix}
+            suffix={suffix}
           />
         </Label>
       )}
