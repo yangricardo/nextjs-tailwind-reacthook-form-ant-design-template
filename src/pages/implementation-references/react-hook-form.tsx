@@ -11,8 +11,10 @@ import { RadioInput } from '@/components/forms/radio-input';
 import { CheckGroupInput } from '@/components/forms/check-group-input';
 import { CheckInput } from '@/components/forms/checkbox-input copy';
 import { SwitchInput } from '@/components/forms/switch-input';
+import { NumberInput } from '@/components/forms/number-input';
 interface ISampleForm {
   text: string;
+  number: number;
   password: string;
   file: FileWithPath[];
   simpleSelect: string;
@@ -51,6 +53,11 @@ const ReactHookFormPage: NextPage = () => {
           name="password"
           placeholder="Senha"
           label="Senha"
+        />
+        <NumberInput<ISampleForm>
+          name="number"
+          placeholder="Numero"
+          label="Numero"
         />
         <FileDropzone<ISampleForm> name="file" label="Arquivo" />
         <SelectInput<ISampleForm>
@@ -188,6 +195,7 @@ const ReactHookFormPage: NextPage = () => {
           loading
           // disabled
         />
+
         <Button type="primary" htmlType="submit">
           Enviar
         </Button>

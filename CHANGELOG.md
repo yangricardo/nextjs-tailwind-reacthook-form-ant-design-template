@@ -22,6 +22,7 @@
 - check box and check group components
 - switch components
 - base layout fix
+- input number
 
 ## 2021.11.16
 
