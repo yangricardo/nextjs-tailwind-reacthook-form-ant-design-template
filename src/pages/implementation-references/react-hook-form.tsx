@@ -8,6 +8,8 @@ import { FileWithPath } from 'file-selector';
 import { PasswordInput } from '@/components/forms/password-input';
 import { SelectInput } from '@/components/forms/select-input';
 import { RadioInput } from '@/components/forms/radio-input';
+import { CheckGroupInput } from '@/components/forms/check-group-input';
+import { CheckInput } from '@/components/forms/checkbox-input copy';
 interface ISampleForm {
   text: string;
   password: string;
@@ -16,6 +18,8 @@ interface ISampleForm {
   multipleSelect: string[];
   tagsSelect: string[];
   radioInput: string;
+  checkGroupInput: string[];
+  checkInput: boolean;
 }
 
 const ReactHookFormPage: NextPage = () => {
@@ -153,6 +157,21 @@ const ReactHookFormPage: NextPage = () => {
             },
           ]}
         />
+        <CheckGroupInput<ISampleForm>
+          name="checkGroupInput"
+          label="Check Group Input"
+          options={[
+            {
+              label: 'Option 1',
+              value: 'option 1',
+            },
+            {
+              label: 'Option 2',
+              value: 'option 2',
+            },
+          ]}
+        />
+        <CheckInput<ISampleForm> name="checkInput" label="Checkbox Input" />
         <Button type="primary" htmlType="submit">
           Enviar
         </Button>
