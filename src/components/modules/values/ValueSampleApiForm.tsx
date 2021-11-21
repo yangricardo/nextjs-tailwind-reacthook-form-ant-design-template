@@ -25,7 +25,7 @@ export const ValueSampleApiForm = ({
     let response: ValueDTO;
     switch (mode) {
       case 'edit':
-        response = await updateValue(1, data);
+        response = await updateValue(defaultValues?.id!, data);
         message.success(`Value Id ${response.id} was updated`);
         break;
       case 'create':
