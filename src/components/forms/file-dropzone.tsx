@@ -1,46 +1,84 @@
+import { Spin } from 'antd';
+import { useState } from 'react';
 import {
   useDropzone,
   FileWithPath,
   FileRejection,
   DropEvent,
 } from 'react-dropzone';
-import { useFormContext } from 'react-hook-form';
+import { FieldValues, useFormContext } from 'react-hook-form';
+import { IGenericInputProps, RHFGenericValueType } from '.';
+import { Label } from './label';
 
-export interface IFileDropzone {
-  name: string;
+interface IFileDropzone<TFieldValues extends FieldValues>
+  extends IGenericInputProps<TFieldValues> {
+  multiple?: boolean;
+  disabled?: boolean | undefined;
+  maxFiles?: number | undefined;
+  maxSize?: number | undefined;
+  minSize?: number | undefined;
+  afterAccept?: (acceptedFiles: FileWithPath[]) => void;
 }
 
-export const FileDropzone = ({ name }: IFileDropzone) => {
-  const RHForm = useFormContext();
-
-  const { acceptedFiles, getRootProps, getInputProps } = useDropzone({
-    multiple: false,
+export const FileDropzone = <TFieldValues extends FieldValues>({
+  name,
+  label,
+  maxFiles,
+  maxSize,
+  minSize,
+  multiple = false,
+  disabled = false,
+  afterAccept,
+}: IFileDropzone<TFieldValues>) => {
+  const RHForm = useFormContext<TFieldValues>();
+  const [loading, setLoading] = useState(false);
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    multiple,
+    maxFiles,
+    maxSize,
+    minSize,
+    disabled,
     onDrop: (
       acceptedFiles: FileWithPath[],
       _fileRejections: FileRejection[],
       _event: DropEvent,
     ) => {
       console.log('FileDropzone', acceptedFiles);
-      RHForm.setValue(name, acceptedFiles);
+      setLoading(true);
+      RHForm.setValue(name, acceptedFiles as RHFGenericValueType<TFieldValues>);
+      afterAccept && afterAccept(acceptedFiles);
+      setLoading(false);
     },
   });
 
-  const files = acceptedFiles.map((file: FileWithPath) => (
-    <li key={file.path}>
-      {file.path} - {file.size} bytes
-    </li>
-  ));
-
   return (
-    <section className="container">
-      <div {...getRootProps({ className: 'dropzone border-2' })}>
+    <Label label={label}>
+      <div
+        {...getRootProps({
+          className: `
+            w-full pt-4 rounded-lg flex flex-col justify-center items-center content-center cursor-pointer
+            border-2 border-dashed
+            text-gray-400 transition duration-400
+
+            ${loading && 'cursor-wait'}
+            ${
+              (disabled && 'cursor-not-allowed') ||
+              'hover:border-blue-300 hover:text-blue-500'
+            }
+          `,
+        })}
+      >
         <input {...getInputProps()} />
-        <p>Drag 'n' drop some files here, or click to select files</p>
+        {(loading && <Spin tip="Loading..." />) || (
+          <>
+            <p className="text-lg">
+              {`${
+                (!isDragActive && 'Clique ou arraste') || 'Solte'
+              } o arquivo aqui`}
+            </p>
+          </>
+        )}
       </div>
-      <aside>
-        <h4>Files</h4>
-        <ul>{files}</ul>
-      </aside>
-    </section>
+    </Label>
   );
 };

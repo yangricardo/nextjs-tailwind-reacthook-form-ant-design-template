@@ -34,7 +34,7 @@ const ReactHookFormPage: NextPage = () => {
           placeholder="Senha"
           label="Senha"
         />
-        <FileDropzone name="file" />
+        <FileDropzone<ISampleForm> name="file" label="Arquivo" />
         <Button type="primary" htmlType="submit">
           Enviar
         </Button>

@@ -15,6 +15,7 @@
 - enforces input attributes from form interface based on React Hook Form integration
 - add label to inputs
 - password input
+- improve File Dropzone implementation
 
 ## 2021.11.16
 
