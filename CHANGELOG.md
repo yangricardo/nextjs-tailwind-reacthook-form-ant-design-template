@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 2021.11.20
+
+- Add `Tsrynge` and `reflect metadata` to implement server container dependencies
+  - Enable to implement Repositories / Services classes used on backend
+
 ## 2021.11.16
 
 - `yarn create next-app --typescript`: bootstrap nextjs project
