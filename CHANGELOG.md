@@ -10,6 +10,7 @@
 - add base client api based on axios
 - implement value resource hook from sample api with crud client calls
   - included provider of this on SampleApi provider
+- implement Index values page consuming values from context hook
 
 ## 2021.11.16
 

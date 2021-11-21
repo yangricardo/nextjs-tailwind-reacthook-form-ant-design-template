@@ -3,17 +3,11 @@ import {
   UpdateValueDTO,
   ValueDTO,
 } from '@/backend/modules/value/ValueDTO';
-import {
-  createContext,
-  MutableRefObject,
-  useCallback,
-  useContext,
-  useRef,
-} from 'react';
+import { createContext, useCallback, useContext, useState } from 'react';
 import { useSampleApiClient } from './sample-api-client-hook';
 
 interface ValuesResourceSampleApiClientContextDTO {
-  valuesRef: MutableRefObject<ValueDTO[]>;
+  values: ValueDTO[];
   getValues: () => Promise<ValueDTO[] | undefined>;
   createValue: (data: CreateValueDTO) => Promise<ValueDTO>;
   updateValue: (id: number, data: UpdateValueDTO) => Promise<ValueDTO>;
@@ -26,7 +20,8 @@ const ValuesResourceSampleApiClientContext =
   );
 
 const ValuesResourceSampleApiClientProvider: React.FC = ({ children }) => {
-  const valuesRef = useRef<ValueDTO[]>([]);
+  const [values, setValues] = useState<ValueDTO[]>([]);
+
   const { sampleApiHttpClientRef } = useSampleApiClient();
 
   const getValues = useCallback(async () => {
@@ -34,7 +29,7 @@ const ValuesResourceSampleApiClientProvider: React.FC = ({ children }) => {
       const response = await sampleApiHttpClientRef.current.get<ValueDTO[]>(
         '/values',
       );
-      valuesRef.current = response.data;
+      setValues(response.data);
       return response.data;
     } catch (error) {
       console.error(error);
@@ -89,7 +84,7 @@ const ValuesResourceSampleApiClientProvider: React.FC = ({ children }) => {
   return (
     <ValuesResourceSampleApiClientContext.Provider
       value={{
-        valuesRef,
+        values,
         getValues,
         createValue,
         updateValue,

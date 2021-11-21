@@ -1,20 +1,24 @@
 import { CreateValueDTO, ValueDTO, UpdateValueDTO } from './ValueDTO';
-import { singleton } from "tsyringe";
+import { singleton } from 'tsyringe';
 
 @singleton()
 export class ValueRepository {
-
   private values: ValueDTO[];
 
   constructor() {
-    this.values = []
+    this.values = [
+      {
+        id: Date.now(),
+        value: 'valor 1',
+      },
+    ];
   }
 
-  public create({value}:CreateValueDTO) {
+  public create({ value }: CreateValueDTO) {
     const newValue: ValueDTO = {
       id: Date.now(),
-      value
-    }
+      value,
+    };
     this.values.push(newValue);
     return newValue;
   }
@@ -24,35 +28,31 @@ export class ValueRepository {
   }
 
   public findById(id: number) {
-    return this.values.find(value=>value.id === id);
+    return this.values.find(value => value.id === id);
   }
 
   public findIndexById(id: number) {
-    return this.values.findIndex(value=>value.id === id);
+    return this.values.findIndex(value => value.id === id);
   }
 
-  public update(id: number, {value}: UpdateValueDTO) {
+  public update(id: number, { value }: UpdateValueDTO) {
     const valueIndex = this.findIndexById(id);
-    if(this.values[valueIndex]) {
+    if (this.values[valueIndex]) {
       const updatedValue = {
         ...this.values[valueIndex],
         id,
-        value
+        value,
       };
       this.values = [
-        ...this.values.filter(record=>record.id !== id),
-        updatedValue
-      ]
+        ...this.values.filter(record => record.id !== id),
+        updatedValue,
+      ];
       return updatedValue;
-    }
-    else return undefined;
+    } else return undefined;
   }
 
   public delete(id: number) {
-    this.values = this.values.filter(record=>record.id !== id)
+    this.values = this.values.filter(record => record.id !== id);
     return;
   }
-
-
-
 }
