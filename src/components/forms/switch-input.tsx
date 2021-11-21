@@ -13,6 +13,7 @@ export interface ISwitchInputProps<TFieldValues extends FieldValues>
 }
 
 export const SwitchInput = <TFieldValues extends FieldValues>({
+  tooltip,
   name,
   label,
   disabled,
@@ -28,7 +29,7 @@ export const SwitchInput = <TFieldValues extends FieldValues>({
       name={name}
       control={control}
       render={({ field: { onChange, value } }) => (
-        <Label label={label}>
+        <Label label={label} tooltip={tooltip}>
           <Switch
             onChange={onChange}
             checkedChildren={checkedChildren}

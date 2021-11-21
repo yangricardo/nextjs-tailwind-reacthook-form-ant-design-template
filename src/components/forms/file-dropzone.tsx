@@ -21,6 +21,7 @@ interface IFileDropzone<TFieldValues extends FieldValues>
 }
 
 export const FileDropzone = <TFieldValues extends FieldValues>({
+  tooltip,
   name,
   label,
   maxFiles,
@@ -52,7 +53,7 @@ export const FileDropzone = <TFieldValues extends FieldValues>({
   });
 
   return (
-    <Label label={label}>
+    <Label label={label} tooltip={tooltip}>
       <div
         {...getRootProps({
           className: `

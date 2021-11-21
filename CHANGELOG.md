@@ -23,6 +23,7 @@
 - switch components
 - base layout fix
 - input number
+- add tooltip to inputs
 
 ## 2021.11.16
 

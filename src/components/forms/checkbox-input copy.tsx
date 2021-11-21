@@ -8,6 +8,7 @@ export interface ICheckBoxInputProps<TFieldValues extends FieldValues>
 }
 
 export const CheckInput = <TFieldValues extends FieldValues>({
+  tooltip,
   name,
   label,
   disabled,
@@ -19,7 +20,7 @@ export const CheckInput = <TFieldValues extends FieldValues>({
       name={name}
       control={control}
       render={({ field: { onChange, value } }) => (
-        <Label label={label}>
+        <Label label={label} tooltip={tooltip}>
           <Checkbox onChange={onChange} value={value} disabled={disabled} />
         </Label>
       )}

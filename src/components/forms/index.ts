@@ -8,6 +8,7 @@ export interface IGenericInputProps<TFieldValues extends FieldValues> {
   name: Path<TFieldValues>;
   placeholder?: string;
   label: string;
+  tooltip?: string;
 }
 
 export type RHFGenericValueType<TFieldValues extends FieldValues> =

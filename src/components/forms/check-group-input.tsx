@@ -17,6 +17,7 @@ export interface ICheckInputProps<TFieldValues extends FieldValues>
 }
 
 export const CheckGroupInput = <TFieldValues extends FieldValues>({
+  tooltip,
   name,
   label,
   options,
@@ -29,7 +30,7 @@ export const CheckGroupInput = <TFieldValues extends FieldValues>({
       name={name}
       control={control}
       render={({ field: { onChange, value } }) => (
-        <Label label={label}>
+        <Label label={label} tooltip={tooltip}>
           <Checkbox.Group
             onChange={onChange}
             value={value}

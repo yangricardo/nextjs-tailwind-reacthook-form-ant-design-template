@@ -4,6 +4,7 @@ import { IGenericInputProps } from '.';
 import { Label } from './label';
 
 export const PasswordInput = <TFieldValues extends FieldValues>({
+  tooltip,
   name,
   placeholder,
   label,
@@ -14,7 +15,7 @@ export const PasswordInput = <TFieldValues extends FieldValues>({
       name={name}
       control={control}
       render={({ field: { onChange, value, onBlur } }) => (
-        <Label label={label}>
+        <Label label={label} tooltip={tooltip}>
           <Input.Password
             onChange={onChange}
             value={value}

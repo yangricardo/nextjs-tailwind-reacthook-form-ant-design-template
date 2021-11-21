@@ -17,6 +17,7 @@ export interface ITextInputProps<
 }
 
 export const TextInput = <TFieldValues extends FieldValues>({
+  tooltip,
   name,
   placeholder,
   label,
@@ -29,7 +30,7 @@ export const TextInput = <TFieldValues extends FieldValues>({
       name={name}
       control={control}
       render={({ field: { onChange, value, onBlur } }) => (
-        <Label label={label}>
+        <Label label={label} tooltip={tooltip}>
           <Input
             onChange={onChange}
             value={value}

@@ -12,6 +12,7 @@ export interface INumberInputProps<TFieldValues extends FieldValues>
 }
 
 export const NumberInput = <TFieldValues extends FieldValues>({
+  tooltip,
   name,
   placeholder,
   label,
@@ -26,7 +27,7 @@ export const NumberInput = <TFieldValues extends FieldValues>({
       name={name}
       control={control}
       render={({ field: { onChange, value, onBlur } }) => (
-        <Label label={label}>
+        <Label label={label} tooltip={tooltip}>
           <InputNumber
             onChange={onChange}
             value={value}

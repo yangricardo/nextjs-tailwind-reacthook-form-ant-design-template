@@ -28,6 +28,7 @@ export interface ISelectInputProps<
 }
 
 export const SelectInput = <TFieldValues extends FieldValues>({
+  tooltip,
   name,
   placeholder,
   label,
@@ -48,7 +49,7 @@ export const SelectInput = <TFieldValues extends FieldValues>({
       name={name}
       control={control}
       render={({ field: { onChange, value, onBlur } }) => (
-        <Label label={label}>
+        <Label label={label} tooltip={tooltip}>
           <Select
             onChange={onChange}
             value={value}
