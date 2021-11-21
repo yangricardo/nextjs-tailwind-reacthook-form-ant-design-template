@@ -8,7 +8,11 @@ export interface IHeaderLink {
 
 export const HeaderLink = ({ href, content }: IHeaderLink) => (
   <Link href={href || '/'}>
-    <span className="hover:text-gray-500 hover:underline text-gray-600 flex flex-row justify-center items-center p-1 cursor-pointer font-mono">
+    <span
+      className="h-full flex flex-row justify-center items-center p-2 cursor-pointer
+        text-gray-600 font-semibold hover:bg-blue-100 hover:shadow-inner
+        "
+    >
       {content}
     </span>
   </Link>

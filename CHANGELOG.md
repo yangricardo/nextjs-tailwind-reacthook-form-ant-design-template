@@ -24,6 +24,7 @@
 - base layout fix
 - input number
 - add tooltip to inputs
+- header and layout updates
 
 ## 2021.11.16
 
