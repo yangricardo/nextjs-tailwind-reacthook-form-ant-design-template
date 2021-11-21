@@ -4,6 +4,7 @@
 
 - Add `Tsrynge` and `reflect metadata` to implement server container dependencies
   - Enable to implement Repositories / Services classes used on backend
+- Implementation of basic CRUD Value Repository and api endpoints
 
 ## 2021.11.16
 
