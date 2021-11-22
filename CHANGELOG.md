@@ -6,6 +6,7 @@
 - TextInput improved to render based on types `text | password | mask |"text-area`, being the `text` the default render
   - add `antd-mask-input` dependency
 - update checkbox and select inputs
+- add `Less` support to improve Ant Design customization
 
 ## 2021.11.20
 
