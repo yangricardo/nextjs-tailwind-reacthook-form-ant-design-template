@@ -1,14 +1,14 @@
 import { InputNumber } from 'antd';
 import { Controller, FieldValues, useFormContext } from 'react-hook-form';
-import { IGenericInputProps, RHFGenericValueType } from '.';
+import { IGenericInputProps, RHFGenericValueType, ValueType } from '.';
 import { Label } from './label';
 export interface INumberInputProps<TFieldValues extends FieldValues>
   extends IGenericInputProps<TFieldValues> {
   disabled?: boolean;
-  min?: number;
-  max?: number;
+  min?: ValueType;
+  max?: ValueType;
   defaultValue?: number;
-  step?: string | number;
+  step?: ValueType;
 }
 
 export const NumberInput = <TFieldValues extends FieldValues>({

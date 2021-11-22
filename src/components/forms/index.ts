@@ -13,3 +13,5 @@ export interface IGenericInputProps<TFieldValues extends FieldValues = any> {
 
 export type RHFGenericValueType<TFieldValues extends FieldValues = any> =
   UnpackNestedValue<PathValue<TFieldValues, Path<TFieldValues>>>;
+
+export type ValueType = string | number;

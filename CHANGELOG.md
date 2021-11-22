@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 2021.11.22
+
+- Update of dependencies due Vercel indicated bugs
+
 ## 2021.11.20
 
 - Add `Tsrynge` and `reflect metadata` to implement server container dependencies
