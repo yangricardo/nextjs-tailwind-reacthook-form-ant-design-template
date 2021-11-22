@@ -33,10 +33,10 @@ export const NumberInput = <TFieldValues extends FieldValues>({
             value={value}
             onBlur={onBlur}
             placeholder={placeholder}
-            min={min}
-            max={max}
-            defaultValue={defaultValue}
-            step={step}
+            min={min as RHFGenericValueType}
+            max={max as RHFGenericValueType }
+            defaultValue={defaultValue as RHFGenericValueType}
+            step={step as RHFGenericValueType}
             style={{ width: '100%' }}
           />
         </Label>
