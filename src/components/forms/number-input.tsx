@@ -1,6 +1,6 @@
 import { InputNumber } from 'antd';
 import { Controller, FieldValues, useFormContext } from 'react-hook-form';
-import { IGenericInputProps } from '.';
+import { IGenericInputProps, RHFGenericValueType } from '.';
 import { Label } from './label';
 export interface INumberInputProps<TFieldValues extends FieldValues>
   extends IGenericInputProps<TFieldValues> {
@@ -21,15 +21,15 @@ export const NumberInput = <TFieldValues extends FieldValues>({
   defaultValue,
   step,
 }: INumberInputProps<TFieldValues>) => {
-  const { control } = useFormContext();
+  const { control, setValue } = useFormContext();
   return (
     <Controller
       name={name}
       control={control}
-      render={({ field: { onChange, value, onBlur } }) => (
+      render={({ field: { value, onBlur } }) => (
         <Label label={label} tooltip={tooltip}>
           <InputNumber
-            onChange={onChange}
+            onChange={value => setValue(name, value as RHFGenericValueType)}
             value={value}
             onBlur={onBlur}
             placeholder={placeholder}

@@ -1,6 +1,6 @@
 import { Checkbox } from 'antd';
 import { Controller, FieldValues, useFormContext } from 'react-hook-form';
-import { IGenericInputProps } from '.';
+import { IGenericInputProps, RHFGenericValueType } from '.';
 import { Label } from './label';
 export interface ICheckBoxInputProps<TFieldValues extends FieldValues>
   extends IGenericInputProps<TFieldValues> {
@@ -13,15 +13,21 @@ export const CheckInput = <TFieldValues extends FieldValues>({
   label,
   disabled,
 }: ICheckBoxInputProps<TFieldValues>) => {
-  const { control } = useFormContext();
+  const { control, setValue } = useFormContext();
 
   return (
     <Controller
       name={name}
       control={control}
-      render={({ field: { onChange, value } }) => (
+      render={({ field: { value } }) => (
         <Label label={label} tooltip={tooltip}>
-          <Checkbox onChange={onChange} value={value} disabled={disabled} />
+          <Checkbox
+            onChange={value =>
+              setValue(name, value.target.checked as RHFGenericValueType)
+            }
+            checked={value}
+            disabled={disabled}
+          />
         </Label>
       )}
     />
