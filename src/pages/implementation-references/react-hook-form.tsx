@@ -2,7 +2,7 @@ import { NextPage } from 'next';
 import { useEffect } from 'react';
 import { SubmitHandler, useForm, FormProvider } from 'react-hook-form';
 import { TextInput } from '@/components/forms/text-input';
-import { Button, Divider, Form, Tooltip } from 'antd';
+import { Button, Divider, Form } from 'antd';
 import { FileDropzone } from '@/components/forms/file-dropzone';
 import { FileWithPath } from 'file-selector';
 import { SelectInput } from '@/components/forms/select-input';
