@@ -11,16 +11,11 @@ export interface ISelectOption {
   detail?: { [key: string]: any };
 }
 
-export interface ISelectInputProps<
-  TFieldValues extends FieldValues,
-  ValueType = any,
-> extends IGenericInputProps<TFieldValues> {
+export interface ISelectInputProps<TFieldValues extends FieldValues>
+  extends IGenericInputProps<TFieldValues> {
   options: ISelectOption[];
-  disabled?: boolean;
   loading?: boolean;
-  allowClear?: boolean;
   mode?: 'multiple' | 'tags';
-  defaultValue?: ValueType;
   filterOption?: boolean;
   onSearch?: (value: string) => void;
   notFoundContent?: ReactNode;

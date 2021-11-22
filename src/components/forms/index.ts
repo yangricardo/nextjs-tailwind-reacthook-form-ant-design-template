@@ -9,6 +9,9 @@ export interface IGenericInputProps<TFieldValues extends FieldValues = any> {
   placeholder?: string;
   label: string;
   tooltip?: string;
+  disabled?: boolean;
+  allowClear?: boolean;
+  defaultValue?: RHFGenericValueType;
 }
 
 export type RHFGenericValueType<TFieldValues extends FieldValues = any> =

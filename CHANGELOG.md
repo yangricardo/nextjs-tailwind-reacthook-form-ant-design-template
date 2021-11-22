@@ -5,6 +5,7 @@
 - Update of dependencies due Vercel indicated bugs
 - TextInput improved to render based on types `text | password | mask |"text-area`, being the `text` the default render
   - add `antd-mask-input` dependency
+- update checkbox and select inputs
 
 ## 2021.11.20
 
