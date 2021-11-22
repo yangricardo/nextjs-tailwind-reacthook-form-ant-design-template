@@ -1,3 +1,4 @@
+import { HeaderDropdown } from './header-dropdown';
 import { headerLinkItems } from './header-link-items';
 import { HeaderLinkList } from './header-link-list';
 import { HeaderTitle } from './header-title';
@@ -9,10 +10,13 @@ export const Header = () => {
       }
     >
       <nav
-        className={'w-full h-full max-w-7xl flex content-center items-center'}
+        className={
+          'w-full px-2 h-full max-w-7xl flex space-x-4 content-center items-center'
+        }
       >
         <HeaderTitle name="Sample Frontend Title" />
         <HeaderLinkList linkItems={headerLinkItems} />
+        <HeaderDropdown />
       </nav>
     </header>
   );

@@ -1,29 +1,27 @@
-import { MenuIcon } from '@/components/icons/menu';
 import { IHeaderLink } from './header-link';
 
 export const headerLinkItems: IHeaderLink[] = [
   {
-    href: '/implementation-references/nextjs',
-    content: 'NextJS',
-  },
-  {
-    href: '/implementation-references/ant-design',
-    content: 'Ant Design',
-  },
-  {
-    href: '/implementation-references/ant-design',
-    content: 'Ant Design',
+    href: '/implementation-references/sample-values-api',
+    content: 'Sample Values CRUD',
+    isDropdown: false,
+    isHeaderLink: true,
   },
   {
     href: '/implementation-references/react-hook-form',
     content: 'React Hook Form',
+    isDropdown: true,
+    isHeaderLink: true,
+    divider: true,
   },
   {
-    href: '/implementation-references/sample-values-api',
-    content: 'Sample Values CRUD',
+    href: '/implementation-references/nextjs',
+    content: 'NextJS',
+    isDropdown: true,
   },
   {
-    href: '/',
-    content: <MenuIcon className={'h-8 w-8'} />,
+    href: '/implementation-references/ant-design',
+    content: 'Ant Design',
+    isDropdown: true,
   },
 ];

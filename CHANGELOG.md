@@ -7,6 +7,8 @@
   - add `antd-mask-input` dependency
 - update checkbox and select inputs
 - add `Less` support to improve Ant Design customization
+- improve header with dropdown menu implementation
+  - possibility of indicate if the menu appears on header or dropdown
 
 ## 2021.11.20
 

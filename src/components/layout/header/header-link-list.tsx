@@ -7,8 +7,14 @@ interface HeaderLinkList {
 
 export const HeaderLinkList = ({ linkItems }: HeaderLinkList) => (
   <HeaderSection className="justify-end">
-    {linkItems.map(({ href, content }, index) => (
-      <HeaderLink key={`header-link-${index}`} href={href} content={content} />
-    ))}
+    {linkItems
+      .filter(({ isHeaderLink }) => isHeaderLink)
+      .map(({ href, content }, index) => (
+        <HeaderLink
+          key={`header-link-${index}`}
+          href={href}
+          content={content}
+        />
+      ))}
   </HeaderSection>
 );
