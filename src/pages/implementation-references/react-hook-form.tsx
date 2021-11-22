@@ -5,11 +5,10 @@ import { TextInput } from '@/components/forms/text-input';
 import { Button, Divider, Form, Tooltip } from 'antd';
 import { FileDropzone } from '@/components/forms/file-dropzone';
 import { FileWithPath } from 'file-selector';
-import { PasswordInput } from '@/components/forms/password-input';
 import { SelectInput } from '@/components/forms/select-input';
 import { RadioInput } from '@/components/forms/radio-input';
 import { CheckGroupInput } from '@/components/forms/check-group-input';
-import { CheckInput } from '@/components/forms/checkbox-input copy';
+import { CheckInput } from '@/components/forms/checkbox-input';
 import { SwitchInput } from '@/components/forms/switch-input';
 import { NumberInput } from '@/components/forms/number-input';
 interface ISampleForm {
@@ -42,22 +41,27 @@ const ReactHookFormPage: NextPage = () => {
         className="w-full flex flex-col space-y-2 justify-center items-center"
       >
         <div className="w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-2">
-          <TextInput<ISampleForm>
-            name="text"
-            placeholder="Texto"
-            label="Texto"
-            tooltip="Tip"
+          <TextInput name="simpleTextInput" label="Simple Text Input" />
+          <TextInput
+            name="disabledText"
+            label="Disabled Text Input"
+            disabled
+            defaultValue={'Disabled text content'}
           />
-          <TextInput<ISampleForm>
-            name="text"
-            placeholder="Texto"
-            label="Texto"
-            suffix={<Tooltip title="Extra information">?</Tooltip>}
+          <TextInput name="password" label="Senha" type="password" />
+          <TextInput
+            name="celphone"
+            label="Celular"
+            type="mask"
+            mask="+55 (11) 1111-11111"
+            placeholder="+55 (11) 1111-11111"
           />
-          <PasswordInput<ISampleForm>
-            name="password"
-            placeholder="Senha"
-            label="Senha"
+          <TextInput
+            name="textArea"
+            label="Text Area"
+            type="text-area"
+            rows={6}
+            maxLength={1000}
           />
           <NumberInput<ISampleForm>
             name="number"
