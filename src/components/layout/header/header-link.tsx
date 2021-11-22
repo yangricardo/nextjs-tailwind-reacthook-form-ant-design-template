@@ -7,7 +7,7 @@ export interface IHeaderLink {
 }
 
 export const HeaderLink = ({ href, content }: IHeaderLink) => (
-  <Link href={href || '/'}>
+  <Link href={href || '/'} passHref>
     <span
       className="h-full flex flex-row justify-center items-center p-2 cursor-pointer
         text-gray-600 font-semibold hover:bg-blue-100 hover:shadow-inner

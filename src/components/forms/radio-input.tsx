@@ -40,8 +40,12 @@ export const RadioInput = <TFieldValues extends FieldValues>({
             disabled={disabled}
             buttonStyle={buttonStyle}
           >
-            {options.map(option => (
-              <Radio.Button value={option.value} disabled={disabled}>
+            {options.map((option, index) => (
+              <Radio.Button
+                key={`radio-button-${name}-${index}`}
+                value={option.value}
+                disabled={disabled}
+              >
                 {option.label}
               </Radio.Button>
             ))}
