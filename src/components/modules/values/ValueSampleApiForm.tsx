@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { SubmitHandler, useForm, FormProvider } from 'react-hook-form';
-import { TextInput } from '@/components/forms/text-input';
+import { TextInput } from '@/components/antd-rfh-form-inputs/text-input';
 import { Button, Form, message } from 'antd';
 import { CreateValueDTO, ValueDTO } from '@/backend/modules/value/ValueDTO';
 import { useValuesResourceSampleApiClient } from '@/hooks/sample-api/values-context.hook';
