@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## 2021.11.24
+
+- Field Array Structure Implementation
+
+  - FieldArrayInput
+  - FieldArrayInputRender
+  - Component Type enabled: `'text' | 'switch' | 'check-group' | 'checkbox' | 'file-dropzone' | 'number' | 'radio' | 'select'`
+  - sample field array page
+
 ## 2021.11.22
 
 - Update of dependencies due Vercel indicated bugs
