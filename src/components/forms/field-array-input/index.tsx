@@ -9,7 +9,7 @@ import {
   FieldArrayInputRender,
   IFieldArrayInputRender,
 } from './field-array-input-render';
-
+import { AiFillDelete, AiOutlinePlus } from 'react-icons/ai';
 export interface IFieldArrayForm<
   TFormValues extends FieldValues = any,
   TFieldArrayValues extends FieldValues = any,
@@ -63,24 +63,27 @@ export const FieldArrayInput = <
                 );
               })}
             </div>
-            <div className="w-full col-span-1 p-7">
+            <div className="w-full flex space-x-2 col-span-1 p-7">
               <Button
+                shape="circle"
                 onClick={() => remove(index)}
                 disabled={fields.length === minItems}
+                className="deleteIconButton"
               >
-                -
+                <AiFillDelete className="w-5 h-5" />
+              </Button>
+              <Button
+                shape="circle"
+                className="addIconButton"
+                onClick={() => append({})}
+                disabled={fields.length === maxItems}
+              >
+                <AiOutlinePlus className="w-5 h-5" />
               </Button>
             </div>
           </div>
         );
       })}
-      <Button
-        className="place-self-center"
-        onClick={() => append({})}
-        disabled={fields.length === maxItems}
-      >
-        +
-      </Button>
     </div>
   );
 };
