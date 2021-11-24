@@ -12,6 +12,7 @@
 - Header content update
 - button customization
 - Header sticky on top
+- Footer with AntD back on top
 
 ## 2021.11.22
 
