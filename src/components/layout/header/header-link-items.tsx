@@ -4,12 +4,19 @@ export const headerLinkItems: IHeaderLink[] = [
   {
     href: '/implementation-references/sample-values-api',
     content: 'Sample Values CRUD',
-    isDropdown: false,
-    isHeaderLink: true,
+    isDropdown: true,
+    isHeaderLink: false,
+    divider: true,
   },
   {
     href: '/implementation-references/react-hook-form',
     content: 'React Hook Form',
+    isDropdown: true,
+    isHeaderLink: true,
+  },
+  {
+    href: '/implementation-references/field-array-sample-form',
+    content: 'Field Array Form',
     isDropdown: true,
     isHeaderLink: true,
     divider: true,
