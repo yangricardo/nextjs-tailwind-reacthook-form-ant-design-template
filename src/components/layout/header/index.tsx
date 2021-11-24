@@ -6,7 +6,7 @@ export const Header = () => {
   return (
     <header
       className={
-        'w-full h-16 z-50 relative flex flex-col items-center justify-center content-center bg-gray-100 shadow-md'
+        'w-full h-16 sticky z-50 top-0 flex flex-col items-center justify-center content-center bg-gray-100 shadow-md'
       }
     >
       <nav

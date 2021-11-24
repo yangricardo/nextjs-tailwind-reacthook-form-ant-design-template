@@ -11,6 +11,7 @@
 
 - Header content update
 - button customization
+- Header sticky on top
 
 ## 2021.11.22
 
