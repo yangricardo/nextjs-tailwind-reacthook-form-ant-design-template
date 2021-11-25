@@ -29,7 +29,7 @@ export const SwitchInput = <TFieldValues extends FieldValues>({
       name={name}
       control={control}
       render={({ field: { onChange, value } }) => (
-        <Label label={label} tooltip={tooltip}>
+        <Label name={name} label={label} tooltip={tooltip}>
           <Switch
             onChange={onChange}
             checkedChildren={checkedChildren}

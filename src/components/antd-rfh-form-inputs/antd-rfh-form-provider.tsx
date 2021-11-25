@@ -9,6 +9,8 @@ import {
 } from 'react-hook-form';
 import { Form } from 'antd';
 import { FormLayout } from 'antd/lib/form/Form';
+import { joiResolver } from '@hookform/resolvers/joi/dist/joi';
+import Joi from 'joi';
 
 interface AntdRhFormContextDTO<TFormValues extends FieldValues = any> {
   RHForm: UseFormReturn<TFormValues, object>;
@@ -24,6 +26,8 @@ type IAntdRhFormProviderProps<TFormValues extends FieldValues = any> = {
   layout?: FormLayout;
   className?: string;
   hookFormProps?: UseFormProps<TFormValues>;
+  validationSchema?: Joi.Schema<TFormValues>;
+  validationOptions?: Joi.AsyncValidationOptions;
 };
 
 type IAntdRhFormProvider<TFormValues extends FieldValues = any> =
@@ -36,8 +40,20 @@ export const AntdRhFormProvider = <TFormValues extends FieldValues = any>({
   layout,
   className,
   hookFormProps,
+  validationSchema,
+  validationOptions,
 }: IAntdRhFormProvider) => {
-  const RHForm = useForm<TFormValues>(hookFormProps);
+  const RHForm = useForm<TFormValues>({
+    ...hookFormProps,
+    reValidateMode: 'onChange',
+    resolver:
+      (validationSchema &&
+        joiResolver(validationSchema, {
+          abortEarly: false,
+          ...validationOptions,
+        })) ||
+      undefined,
+  });
 
   const formChanges = RHForm.watch();
   useEffect(

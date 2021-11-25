@@ -27,14 +27,14 @@ export const NumberInput = <TFieldValues extends FieldValues>({
       name={name}
       control={control}
       render={({ field: { value, onBlur } }) => (
-        <Label label={label} tooltip={tooltip}>
+        <Label name={name} label={label} tooltip={tooltip}>
           <InputNumber
             onChange={value => setValue(name, value as RHFGenericValueType)}
             value={value}
             onBlur={onBlur}
             placeholder={placeholder}
             min={min as RHFGenericValueType}
-            max={max as RHFGenericValueType }
+            max={max as RHFGenericValueType}
             defaultValue={defaultValue as RHFGenericValueType}
             step={step as RHFGenericValueType}
             style={{ width: '100%' }}

@@ -1,3 +1,4 @@
+import { ErrorMessage } from '@hookform/error-message';
 import { Checkbox } from 'antd';
 import { Controller, FieldValues, useFormContext } from 'react-hook-form';
 import { IGenericInputProps, RHFGenericValueType } from '.';
@@ -11,22 +12,29 @@ export const CheckInput = <TFieldValues extends FieldValues>({
   label,
   disabled,
 }: ICheckBoxInputProps<TFieldValues>) => {
-  const { control, setValue } = useFormContext();
+  const {
+    control,
+    setValue,
+    formState: { errors },
+  } = useFormContext();
 
   return (
     <Controller
       name={name}
       control={control}
       render={({ field: { value } }) => (
-        <Checkbox
-          onChange={value =>
-            setValue(name, value.target.checked as RHFGenericValueType)
-          }
-          checked={value}
-          disabled={disabled}
-        >
-          {label}
-        </Checkbox>
+        <>
+          <Checkbox
+            onChange={value =>
+              setValue(name, value.target.checked as RHFGenericValueType)
+            }
+            checked={value}
+            disabled={disabled}
+          >
+            {label}
+          </Checkbox>
+          <ErrorMessage errors={errors} name={name} />
+        </>
       )}
     />
   );

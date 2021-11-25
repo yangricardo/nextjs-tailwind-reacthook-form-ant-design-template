@@ -33,7 +33,7 @@ export const RadioInput = <TFieldValues extends FieldValues>({
       name={name}
       control={control}
       render={({ field: { onChange, value } }) => (
-        <Label label={label} tooltip={tooltip}>
+        <Label name={name} label={label} tooltip={tooltip}>
           <Radio.Group
             onChange={onChange}
             value={value}

@@ -15,6 +15,7 @@
 - Footer with AntD back on top
 - start drawer integration
 - `AntdRhFormProvider` standartization to implement as base on form implementation
+- integration with Joi to form validation
 
 ## 2021.11.22
 

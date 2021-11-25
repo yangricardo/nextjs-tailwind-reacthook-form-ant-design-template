@@ -4,6 +4,7 @@ import {
   PathValue,
   UnpackNestedValue,
 } from 'react-hook-form';
+
 export interface IGenericInputProps<TFieldValues extends FieldValues = any> {
   name: Path<TFieldValues>;
   placeholder?: string;

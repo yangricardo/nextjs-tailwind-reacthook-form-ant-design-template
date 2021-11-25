@@ -11,10 +11,13 @@ import { CheckInput } from '@/components/antd-rfh-form-inputs/checkbox-input';
 import { SwitchInput } from '@/components/antd-rfh-form-inputs/switch-input';
 import { NumberInput } from '@/components/antd-rfh-form-inputs/number-input';
 import { AntdRhFormProvider } from '@/components/antd-rfh-form-inputs/antd-rfh-form-provider';
+import Joi from 'joi';
 
 interface ISampleForm {
   text: string;
   number: number;
+  maskedInput: string;
+  textArea: string;
   password: string;
   file: FileWithPath[];
   simpleSelect: string;
@@ -30,28 +33,43 @@ const ReactHookFormPage: NextPage = () => {
   const onSubmit: SubmitHandler<ISampleForm> = data =>
     console.log('Submit', data);
 
+  const validationSchema = Joi.object<ISampleForm>({
+    text: Joi.string().required(),
+    checkInput: Joi.boolean().default(false),
+    switchInput: Joi.boolean().default(false),
+    simpleSelect: Joi.string().required(),
+    multipleSelect: Joi.array().items(Joi.string()).min(1),
+    tagsSelect: Joi.array().items(Joi.string()).min(1),
+    checkGroupInput: Joi.array().min(1),
+    file: Joi.array().min(1),
+    number: Joi.number().integer().required(),
+    password: Joi.string().required(),
+    radioInput: Joi.string().required(),
+  });
+
   return (
     <AntdRhFormProvider<ISampleForm>
       formName={'sample-react-hook-form'}
       onSubmit={onSubmit}
+      validationSchema={validationSchema}
     >
       <div className="w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-2">
-        <TextInput name="simpleTextInput" label="Simple Text Input" />
-        <TextInput
-          name="disabledText"
+        <TextInput<ISampleForm> name="text" label="Simple Text Input" />
+        <TextInput<ISampleForm>
+          name="text"
           label="Disabled Text Input"
           disabled
           defaultValue={'Disabled text content'}
         />
-        <TextInput name="password" label="Senha" type="password" />
-        <TextInput
-          name="celphone"
+        <TextInput<ISampleForm> name="password" label="Senha" type="password" />
+        <TextInput<ISampleForm>
+          name="maskedInput"
           label="Celular"
           type="mask"
           mask="+55 (11) 1111-11111"
           placeholder="+55 (11) 1111-11111"
         />
-        <TextInput
+        <TextInput<ISampleForm>
           name="textArea"
           label="Text Area"
           type="text-area"

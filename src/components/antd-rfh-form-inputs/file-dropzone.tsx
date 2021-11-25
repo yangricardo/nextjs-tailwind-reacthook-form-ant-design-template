@@ -53,7 +53,7 @@ export const FileDropzone = <TFieldValues extends FieldValues>({
   });
 
   return (
-    <Label label={label} tooltip={tooltip}>
+    <Label name={name} label={label} tooltip={tooltip}>
       <div
         {...getRootProps({
           className: `

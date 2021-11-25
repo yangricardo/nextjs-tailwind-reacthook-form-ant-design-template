@@ -44,7 +44,7 @@ export const SelectInput = <TFieldValues extends FieldValues>({
       name={name}
       control={control}
       render={({ field: { onChange, value, onBlur } }) => (
-        <Label label={label} tooltip={tooltip}>
+        <Label name={name} label={label} tooltip={tooltip}>
           <Select
             onChange={onChange}
             value={value}
