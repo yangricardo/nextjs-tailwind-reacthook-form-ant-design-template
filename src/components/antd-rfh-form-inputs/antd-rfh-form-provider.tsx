@@ -9,7 +9,7 @@ import {
 } from 'react-hook-form';
 import { Form } from 'antd';
 import { FormLayout } from 'antd/lib/form/Form';
-import { joiResolver } from '@hookform/resolvers/joi/dist/joi';
+import { joiResolver } from '@hookform/resolvers/joi';
 import Joi from 'joi';
 
 interface AntdRhFormContextDTO<TFormValues extends FieldValues = any> {
