@@ -1,16 +1,16 @@
 import { Button, Drawer, DrawerProps } from 'antd';
-import { FC, ReactNode, useState } from 'react';
+import { PropsWithChildren, ReactNode, useState } from 'react';
 
 export interface IUiDrawer {
   buttonContent?: ReactNode;
   drawer?: DrawerProps;
 }
 
-export const UiDrawer: FC<IUiDrawer> = ({
+export const UiDrawer = ({
   children,
   drawer,
   buttonContent,
-}) => {
+}: PropsWithChildren<IUiDrawer>) => {
   const [visible, setVisible] = useState(false);
   return (
     <>
