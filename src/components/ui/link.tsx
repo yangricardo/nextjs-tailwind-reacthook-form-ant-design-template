@@ -1,8 +1,8 @@
 import NextLink, { LinkProps } from 'next/link';
-import { FC } from 'react';
+import { PropsWithChildren } from 'react';
 
-export const Link: FC<LinkProps> = ({ children, ...linkProps }) => (
+export const Link = ({ children, ...linkProps }: PropsWithChildren<LinkProps>) => (
   <NextLink {...linkProps}>
-    <a>{children}</a>
+    {children}
   </NextLink>
 );
