@@ -1,7 +1,7 @@
-import { FC } from 'react';
+import { PropsWithChildren } from 'react';
 import { Footer } from './footer';
 import { Header } from './header';
-export const Layout: FC = ({ children }) => {
+export const Layout = ({ children }: PropsWithChildren) => {
   return (
     <div className="w-full h-screen flex flex-auto flex-col bg-gray-50">
       <Header />
