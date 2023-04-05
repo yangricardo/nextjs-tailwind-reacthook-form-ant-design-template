@@ -75,7 +75,9 @@ export const FieldArrayInput = <
               <Button
                 shape="circle"
                 className="addIconButton"
-                onClick={() => append({})}
+                onClick={() => append({
+
+                } as any)}
                 disabled={fields.length === maxItems}
               >
                 <AiOutlinePlus className="w-5 h-5" />

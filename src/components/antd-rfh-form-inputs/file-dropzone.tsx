@@ -7,7 +7,7 @@ import {
   DropEvent,
 } from 'react-dropzone';
 import { FieldValues, useFormContext } from 'react-hook-form';
-import { IGenericInputProps, RHFGenericValueType } from '.';
+import { IGenericInputProps } from '.';
 import { Label } from './label';
 
 interface IFileDropzone<TFieldValues extends FieldValues>
@@ -46,7 +46,7 @@ export const FileDropzone = <TFieldValues extends FieldValues>({
     ) => {
       console.log('FileDropzone', acceptedFiles);
       setLoading(true);
-      RHForm.setValue(name, acceptedFiles as RHFGenericValueType<TFieldValues>);
+      RHForm.setValue(name, acceptedFiles as any);
       afterAccept && afterAccept(acceptedFiles);
       setLoading(false);
     },
