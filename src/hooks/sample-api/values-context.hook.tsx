@@ -3,7 +3,7 @@ import {
   UpdateValueDTO,
   ValueDTO,
 } from '@/backend/modules/value/ValueDTO';
-import { createContext, useCallback, useContext, useState } from 'react';
+import { createContext, useCallback, useContext, useState, PropsWithChildren } from 'react';
 import { useSampleApiClient } from './sample-api-client-hook';
 
 interface ValuesResourceSampleApiClientContextDTO {
@@ -21,7 +21,7 @@ const ValuesResourceSampleApiClientContext =
     {} as ValuesResourceSampleApiClientContextDTO,
   );
 
-const ValuesResourceSampleApiClientProvider: React.FC = ({ children }) => {
+const ValuesResourceSampleApiClientProvider = ({ children }:PropsWithChildren) => {
   const [values, setValues] = useState<ValueDTO[]>([]);
   const [currentValue, setCurrentValue] = useState<ValueDTO>();
 
