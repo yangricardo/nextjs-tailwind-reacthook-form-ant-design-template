@@ -10,6 +10,7 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>,
 ) {
+  res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload');
   res.status(200).json({
     name: (req.query.name as string) || 'John Doe',
     privateKey: process.env.PRIVATE_KEY || '',
