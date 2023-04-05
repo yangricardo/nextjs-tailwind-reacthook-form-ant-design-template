@@ -1,5 +1,5 @@
 import axios, { AxiosInstance } from 'axios';
-import { createContext, MutableRefObject, useContext, useRef } from 'react';
+import { createContext, MutableRefObject, useContext, useRef, PropsWithChildren } from 'react';
 import { ValuesResourceSampleApiClientProvider } from './values-context.hook';
 
 interface SampleApiClientContextDTO {
@@ -10,7 +10,7 @@ const SampleApiClientContext = createContext<SampleApiClientContextDTO>(
   {} as SampleApiClientContextDTO,
 );
 
-const SampleApiClientProvider: React.FC = ({ children }) => {
+const SampleApiClientProvider = ({ children }:PropsWithChildren) => {
   const sampleApiHttpClientRef = useRef(
     axios.create({
       baseURL:
