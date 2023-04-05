@@ -1,10 +1,10 @@
-import { createContext, useContext } from 'react';
+import { createContext, useContext, PropsWithChildren } from 'react';
 
 interface BaseContextDTO {}
 
 const BaseContext = createContext<BaseContextDTO>({} as BaseContextDTO);
 
-const BaseProvider: React.FC = ({ children }) => {
+const BaseProvider = ({ children }:PropsWithChildren) => {
   return <BaseContext.Provider value={{}}>{children}</BaseContext.Provider>;
 };
 
